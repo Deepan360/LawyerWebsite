@@ -33,12 +33,7 @@
             margin-bottom: 20px;
             font-weight: bold;
         }
-        .footer {
-            padding: 2px 0;
-            background-color: #d8d8d8;
-            text-align: center;
-            text-decoration: none;
-        }
+
         p {
             margin-bottom: 15px;
             text-align: justify;
@@ -66,6 +61,14 @@ height: 2px !important;
 ul .service-list{
     list-style: none;
 }
+
+.nav-pills .nav-link {
+            border-radius: 0.25rem;
+        }
+        .nav-item .nav-link:hover {
+            color: initial !important;
+          
+        }
     </style>
 </head>
 <body>
@@ -98,7 +101,7 @@ ul .service-list{
             </div>
         </nav>
     </header>
-    
+
     <main>
         <div class="container">
             <div class="hero-section text-center">
@@ -108,8 +111,20 @@ ul .service-list{
                     <h1 class="text-danger w-300"><span class="text-muted">About </span>"Golden Rock Adr"</h1>
                 </div>
             </div>
-            
-            <div class="container English">
+          <div class="d-flex justify-content-center">
+                <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-danger  rounded-5 shadow-sm w-75 mt-3 " style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-danger); --bs-nav-pills-link-active-bg: var(--bs-white);" id="languageTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-5 active" id="english-tab" data-bs-toggle="tab" data-bs-target="#english" type="button" role="tab" aria-controls="english" aria-selected="true">English</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-5" id="tamil-tab" data-bs-toggle="tab" data-bs-target="#tamil" type="button" role="tab" aria-controls="tamil" aria-selected="false">தமிழ்</button>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="tab-content mt-4" id="languageTabsContent">
+                <div class="tab-pane fade show active" id="english" role="tabpanel" aria-labelledby="english-tab">
+            <div class="container " >
                 <h2 class="section-title text-center text-danger">About Us</h2>
                 <div class="about-us-content ">
                     <p>We are an organization registered under section 8 of the Companies Act 2013. Our main objectives are to provide legal awareness on alternative dispute resolution and promote legally fine-tuned contracts with built-in arbitration agreements. We aim to establish bespoke arbitral tribunals consisting of persons well acquainted with the needs of the citizenry and trade and commerce for speedy justice, ensuring confidence in the rule of law. We provide all necessary logistical support for completing arbitration.</p>
@@ -161,8 +176,11 @@ ul .service-list{
                 <p>We constantly collect and update data on consumer litigations, maintaining a repository of consumer laws. We provide online legal advice and use virtual meeting technology for consultations, available in Tamil and English.</p>
                 
             </div>
-            <hr class="featurette-divider">
-            <div class="container Tamil mb-3">
+            </div>
+            
+           
+            <div class="tab-pane fade" id="tamil" role="tabpanel" aria-labelledby="tamil-tab">
+                <div class="container mb-3">
                 <h2 class="section-title text-center text-danger">தமிழ்</h2> 
                 <div class="about-us-content ">
                     <p>நமது நாட்டில் நீதிமன்றத்தில் தேங்கியுள்ள வழக்குகளின் நிலை காரணமாக நமது மத்திய அரசு பல தீவிர முயற்சி எடுத்து வழக்காளர்களுக்கு இடையில் இருக்கக்கூடிய பிரச்சனைகளை தீர்ப்பது சம்பந்தமாக தனியார் தீர்ப்பாயம் மற்றும் மத்தியஸ்தர் பேச்சு வார்த்தை போன்றவற்றை ஊக்குவித்து வருகிறது.அதன் அடிப்படையில் Arbitration and Conciliation Act 1996  என்ற சட்டத்தை 2019 ஆம் வருடம் திருத்தப்பட்டது. அதில் அமைப்பு ரீதியிலான நிறுவனங்கள் மேற்பார்வையில் செய்யப்படும் Arbitration -க்கு அரசாங்கம் முக்கியத்துவம் கொடுத்துவருகிறது. அதன் அடிப்படையில் கம்பெனிகள் சட்டம் 2013 பிரிவு 8 ன் கீழ் இந்த நிறுவனம் பதிவு செய்யப்பட்டுள்ளது. சிவில் தாவாக்களில் விரைவான தீர்வு   மற்றும்  தெளிவான ஏற்படாததால் மக்கள் அதனை தவிர்ப்பதற்கான சூழ்நிலை ஏற்பட்டுள்ளது. இதனை சாதகமாக்கி கட்டப்பஞ்சாயத்து முறை கையாளப்படுகிறது.  எனவே  சட்டத்தின்  ஆட்சி ( Rule  of   law)   தடை படுகிறது,மக்களிடம் சட்ட விழிப்புணர்வு  ஏற்படுத்துவதன் மூலம் மக்களுக்கு தேவைப்படும் போது தகுதியான ஆர்பிட்ரேட்டரை அடையாளம் கண்டுபிடித்து நியமித்து  எளிய  முறையில் வழக்குகளை விரைவாக தீர்ப்பதற்கு இந்த நிறுவனம் செயல்பட்டு வருகிறது. </p>
@@ -197,15 +215,29 @@ ul .service-list{
             <p>Consumer rights/ நுகர்வோர் உரிமைகளை பற்றி மக்களுக்கு விழிப்புணர்வு ஏற்படுத்த வேண்டும் என்று பல திட்டங்களை ஏற்பாடு செய்து வருகிறது. முக்கியமாக மக்களுக்கு தேவையான ஆலோசனைகளை வழங்கி தேவைப்படும் இடங்களில் மக்களுக்கு நுகர்வோர் விழிப்புணர்வு கொணரும் வழியில் வங்கித் துறை, உணவு பாதுகாப்பு துறை, மத்திய நுகர்வோர் பாதுகாப்பு துறை வழிகாட்டி, காப்பீடு துறை, மத்திய சிவல் விமான போக்குவரத்து இயக்குனரகம், மோட்டார் வாகன சட்டம், State Real Estate Development Authority வகுக்கும் வழிமுறை , தொலைத்தொடர்பு துறை , இந்திய மருத்துவ ஆராய்ச்சி கழகம்  ஆகிய  அமைப்புகள் வெளியிடும் வழிகாட்டிகளை தொகுத்து(repository) வருகிறது. நுகர்வோர் சரியான முடிவெடுப்பதற்கு சட்ட உதவி தேவைப்படும் பொழுது  சட்ட உதவி வழங்க குழு உள்ளது.</p>
            
         </div>
-            
+            </div>
+            </div>
         </div>
     </main>
-        <footer class=" footer ">
-            <div class="container">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; 2024 Golden Rock Adr &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <p>&copy; 2024 Golden Rock Adr. All rights reserved.</p>
+                    <p>Webpage developed by <a href="https://www.akilamtechnology.com/" class="text-white">Akilam Technology</a></p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <ul class="list-unstyled float-lg-end">
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Terms of Use</a></li>
+                        <li><a href="#" class="text-white">Back to top</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        </footer>
+    </footer>
+    
+    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>

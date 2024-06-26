@@ -84,11 +84,6 @@ nav li .nav-item .active{
   }
 }
 
-  /* CUSTOMIZE THE CAROUSEL
-  -------------------------------------------- */
-
-
-  /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
     bottom: 3rem;
     z-index: 10;
@@ -106,7 +101,7 @@ nav li .nav-item .active{
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(1.5px); /* Adjust the blur intensity as needed */
+    backdrop-filter: blur(1.5px); 
     z-index: 1;
 }
 
@@ -120,45 +115,33 @@ nav li .nav-item .active{
    height: 600px !important;
    background: rgba(0, 0, 0, 0.5);
    backdrop-filter: blur(5px);
-   /* Adjust the blur intensity as needed */
    z-index: 1;
  }
 
- /* Large devices (desktops, 1200px and up) */
  @media (min-width: 1200px) {
    .carousel-item {
      height: 600px !important;
    }
  }
 
- /* Medium devices (tablets, 768px and up) */
  @media (min-width: 768px) and (max-width: 1199px) {
    .carousel-item {
      height: 500px !important;
    }
  }
 
- /* Small devices (phones, 576px and up) */
  @media (min-width: 576px) and (max-width: 767px) {
    .carousel-item {
      height: 400px !important;
    }
  }
 
- /* Extra small devices (phones, less than 576px) */
  @media (max-width: 575px) {
    .carousel-item {
      height: 300px !important;
    }
  }
 
-
-
-
-  /* MARKETING CONTENT
--------------------------------------------------- */
-
-  /* Center align the text within the three columns below the carousel */
   .marketing .col-lg-4 {
     margin-bottom: 1.5rem;
     text-align: center;

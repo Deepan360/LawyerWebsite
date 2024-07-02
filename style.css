@@ -221,3 +221,51 @@ nav li .nav-item .active{
  .navbar{
   position: sticky;
  }
+ .team-card {
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .team-card:hover {
+            transform: scale(1.05);
+        }
+        .team-card img {
+            object-fit: cover;
+            height: 300px;
+        }
+        .team-card .card-body {
+            background-color: #f8f9fa;
+        }
+        .team-card .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .team-card .card-text {
+            margin-bottom: 1rem;
+        }
+        .team-card .social-icons a {
+            margin: 0 0.5rem;
+            color: #555;
+            transition: color 0.2s;
+        }
+        .team-card .social-icons a:hover {
+            color: #007bff;
+        }
+                    .service-card {
+                 
+                      box-shadow: 0 0px 10px  0px rgba(0, 0, 0, 0.3);
+                      transition: transform 0.2s;
+                     
+                    }
+          
+                    .service-card:hover {
+                      transform: scale(1.05);
+                    }
+        
+   .font-weight-bold{
+    font-weight: bold;
+   }
+.cards{
+  height: max-content;
+  max-height: 100px;
+}

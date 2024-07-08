@@ -91,6 +91,7 @@ function shortenContent($content, $max_length = 200)
         rel="stylesheet">
 
 <style>
+<<<<<<< HEAD
         .card {
         max-height: auto; /* Allow card to expand vertically */
         overflow: hidden; /* Hide overflow content initially */
@@ -128,6 +129,27 @@ function shortenContent($content, $max_length = 200)
     .spotify-embed {
         margin-bottom: 10px;
     }
+=======
+ .card-img-top {
+            width: 100%;
+            height: 150px; /* Set a fixed height for the images */
+            object-fit: cover; /* Ensure images cover the area without distortion */
+        }
+        .card-body {
+            padding: 10px; /* Reduce padding for smaller card size */
+        }
+        .card-title {
+            font-size: 1.1rem; /* Reduce font size */
+        }
+        .card-text {
+            font-size: 0.9rem; /* Reduce font size */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Show only 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
 </style>
 
 
@@ -204,6 +226,7 @@ function shortenContent($content, $max_length = 200)
             <h2>Explore the latest happenings in the art and culture world with our curated articles.</h2>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="container mt-4 mb-4">
         <?php if (!empty($error_message)) : ?>
             <div class="alert alert-warning" role="alert">
@@ -231,6 +254,38 @@ function shortenContent($content, $max_length = 200)
             </div>
         <?php endif; ?>
     </div>
+=======
+<div class="container mt-4">
+    <?php if (!empty($error_message)) : ?>
+    <div class="alert alert-warning" role="alert">
+        <?php echo $error_message; ?>
+    </div>
+<?php else : ?>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php foreach ($blogs as $blog) : ?>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger font-weight-bold"><?php echo htmlspecialchars($blog['title']); ?></h5>
+                        <?php if (!empty($blog['embed_url'])) : ?>
+                            <div class="spotify-embed">
+                                <iframe src="<?php echo htmlspecialchars($blog['embed_url']); ?>" width="100%" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                        <?php endif; ?>
+                        <div class="card-text">
+                            <?php echo shortenContent($blog['content']); ?>
+                            <?php if (strlen($blog['content']) > 200) : ?>
+                                <span class="read-more" onclick="toggleText(this)" data-full-content="<?php echo htmlspecialchars($blog['content']); ?>">Read more</span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+</div>
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
 </div>
 </main>
 
@@ -263,6 +318,7 @@ function shortenContent($content, $max_length = 200)
        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
        crossorigin="anonymous"></script>
 
+<<<<<<< HEAD
        <script>
      function toggleText(element) {
         if (element.classList.contains('truncated-text')) {
@@ -274,6 +330,20 @@ function shortenContent($content, $max_length = 200)
         }
     }
 </script>
+=======
+   <script>
+       // JavaScript function to toggle text between truncated and full content
+       function toggleText(element) {
+           if (element.classList.contains('truncated-text')) {
+               element.classList.remove('truncated-text');
+               element.classList.add('expanded-text');
+           } else {
+               element.classList.remove('expanded-text');
+               element.classList.add('truncated-text');
+           }
+       }
+   </script>
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
 </body>
 
 </html>

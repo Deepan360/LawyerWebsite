@@ -6,7 +6,11 @@ require_once 'db.php';
 $blogs = [];
 
 // Fetch blogs from the database
+<<<<<<< HEAD
 $select_query = "SELECT id, title, content, spotify_link FROM blogs WHERE active = 1 ORDER BY created_at DESC";
+=======
+$select_query = "SELECT title, content, spotify_link FROM blogs WHERE active = 1 ORDER BY created_at DESC";
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
 $result = mysqli_query($conn, $select_query);
 
 // Check if there are any blogs retrieved
@@ -65,7 +69,11 @@ function shortenContent($content, $max_length = 200)
     } else {
         // Find the last space within the limit
         $last_space = strrpos(substr($content, 0, $max_length), ' ');
+<<<<<<< HEAD
         return substr($content, 0, $last_space) . '... <span class="read-more" data-full-content="' . htmlspecialchars($content) . '">Read more</span>';
+=======
+        return substr($content, 0, $last_space) . '...';
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
     }
 }
 ?>
@@ -76,6 +84,7 @@ function shortenContent($content, $max_length = 200)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display Blogs - Golden Rock Adr</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./lawlogo.jpeg" type="image/x-icon">
     <!-- Bootstrap CSS -->
@@ -85,6 +94,16 @@ function shortenContent($content, $max_length = 200)
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Google Fonts: Playfair Display -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./lawlogo.jpeg" type="image/x-icon">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
     <style>
         .footer {
             color: white;
@@ -95,6 +114,7 @@ function shortenContent($content, $max_length = 200)
             bottom: 0;
             width: 100%;
         }
+<<<<<<< HEAD
         .card {
             max-height: auto; /* Allow card to expand vertically */
             overflow: hidden; /* Hide overflow content initially */
@@ -102,21 +122,45 @@ function shortenContent($content, $max_length = 200)
             border: 1px solid #fff;
             cursor: pointer;
             position: relative; /* Ensure delete icon is positioned correctly */
+=======
+
+        .card {
+
+            max-height: 300px;
+            height: 250px;
+            overflow: hidden;
+            /* Hide overflowing content */
+            box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+            border: 1px solid #fff;
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
         }
 
         .card-title {
             font-size: 1.25rem;
             font-weight: bold;
             color: #dc3545;
+<<<<<<< HEAD
             margin-bottom: 1rem;
         }
 
+=======
+            /* Red color for title */
+            margin-bottom: 1rem;
+        }
+
+        .card-img-top {
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
         .card-body {
             display: flex;
             flex-direction: column;
             height: 100%;
         }
 
+<<<<<<< HEAD
         .card-content {
             white-space: nowrap; /* Truncate content */
             overflow: hidden;
@@ -148,6 +192,20 @@ function shortenContent($content, $max_length = 200)
                 flex: 0 0 100%;
                 max-width: 100%;
             }
+=======
+        .read-more-content {
+            display: none;
+            /* Initially hide full content */
+        }
+
+        .read-more-btn {
+            cursor: pointer;
+            color: #007bff;
+            /* Blue color for read more button */
+            text-decoration: underline;
+            align-self: flex-end;
+            /* Align button to the right */
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
         }
     </style>
 </head>
@@ -163,6 +221,7 @@ function shortenContent($content, $max_length = 200)
                 </div>
             </div>
         </nav>
+<<<<<<< HEAD
         <nav class="navbar navbar-expand navbar-dark bg-danger text-white">
             <div class="nav navbar-nav">
                 <a class="nav-item nav-link" href="./blogupload.html">Blog-Upload</a>
@@ -172,6 +231,18 @@ function shortenContent($content, $max_length = 200)
         </nav>
     </header>
     <main >
+=======
+        <nav class="navbar navbar-expand navbar-dark  bg-danger text-white">
+            <div class="nav navbar-nav">
+                <a class="nav-item nav-link " href="./blogupload.html" aria-current="page">Blog-Upload <span class="visually-hidden">(current)</span></a>
+                <a class="nav-item nav-link active" href="/viewblog.php">View-Blog</a>
+                <a class="nav-item nav-link " href="/index.html">Home</a>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
         <div class="container mt-4">
             <?php if (!empty($error_message)) : ?>
                 <div class="alert alert-warning" role="alert">
@@ -181,8 +252,12 @@ function shortenContent($content, $max_length = 200)
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <?php foreach ($blogs as $blog) : ?>
                         <div class="col">
+<<<<<<< HEAD
                             <div class="card">
                                 <i class="bi bi-trash delete-icon" onclick="deleteBlog(<?php echo $blog['id']; ?>)"></i>
+=======
+                            <div class="card ">
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
                                 <div class="card-body">
                                     <h5 class="card-title text-danger font-weight-bold"><?php echo htmlspecialchars($blog['title']); ?></h5>
                                     <?php if (!empty($blog['embed_url'])) : ?>
@@ -190,9 +265,21 @@ function shortenContent($content, $max_length = 200)
                                             <iframe src="<?php echo htmlspecialchars($blog['embed_url']); ?>" width="100%" height="80" frameborder="1" allowtransparency="true" allow="encrypted-media"></iframe>
                                         </div>
                                     <?php endif; ?>
+<<<<<<< HEAD
                                     <div class="card-content truncated-text" onclick="toggleText(this)">
                                         <?php echo htmlspecialchars($blog['content']); ?>
                                     </div>
+=======
+                                    <div class="card-content">
+                                        <?php echo htmlspecialchars($blog['short_content']); ?> <!-- Show shortened content -->
+                                        <div class="read-more-content">
+                                            <?php echo htmlspecialchars($blog['content']); ?> <!-- Full content -->
+                                        </div>
+                                    </div>
+                                    <?php if (strlen($blog['content']) > 200) : ?>
+                                        <p class="read-more-btn text-primary">Read More</p>
+                                    <?php endif; ?>
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
                                 </div>
                             </div>
                         </div>
@@ -201,6 +288,10 @@ function shortenContent($content, $max_length = 200)
             <?php endif; ?>
         </div>
     </main>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
     <footer>
         <div class="footer bg-dark text-white">
             This web page is developed by Akilam Technology 🌏
@@ -208,6 +299,7 @@ function shortenContent($content, $max_length = 200)
     </footer>
 
     <!-- Bootstrap JavaScript Bundle with Popper -->
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQ+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script>
@@ -237,12 +329,41 @@ function shortenContent($content, $max_length = 200)
                 xhr.send('id=' + blogId);
             }
         }
+=======
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var readMoreBtns = document.querySelectorAll('.read-more-btn');
+
+            readMoreBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var cardBody = this.closest('.card-body');
+                    var readMoreContent = cardBody.querySelector('.read-more-content');
+
+                    // Toggle visibility of full content
+                    readMoreContent.style.display = 'block';
+                    this.style.display = 'none'; // Hide "Read More" button
+                });
+            });
+        });
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
     </script>
 </body>
 
 </html>
 
+<<<<<<< HEAD
 <?php
 // Close the database connection
 mysqli_close($conn);
 ?>
+=======
+
+
+<?php
+// Close the database connection
+mysqli_close($conn);
+?>
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85

@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 ﻿
 <!DOCTYPE html>
 <html lang="en">
+=======
+﻿<<<<<<< HEAD
+﻿
+<!DOCTYPE html>
+<html lang="en">
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+>>>>>>> 900c65a6ff53030b975a68bc27d2fa361d566fc3
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +53,7 @@
             margin: 0 auto; 
             text-align: center;
         }
+<<<<<<< HEAD
            /* Media Query for Responsive Design */
            @media (max-width: 768px) {
             main .container {
@@ -51,6 +64,11 @@
         }
     </style>
 </head>
+=======
+    </style>
+</head>
+<<<<<<< HEAD
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -79,6 +97,30 @@
             <div class="title text-danger mb-3"><h5>Upload Your Blogs</h5></div>
 
 
+<<<<<<< HEAD
+=======
+=======
+
+<body>
+    <header>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand text-danger" href="#"><img src="./lawlogo.jpeg" alt="logo"
+                        class="nav-logo">Golden Rock Adr</a>
+                <div class="d-flex">
+                    <a class="btn btn-outline-danger me-2" href="tel:9150593844">Contact: 9150593844</a>
+                    <a class="btn btn-outline-danger" href="mailto:help@goldenrockadr.org">Email:
+                        help@goldenrockadr.org</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="alerts" class="mt-4"></div>
+        <div class="container mt-4 border-black">
+            <div class="title text-success mb-3"><h5>Upload Your Blogs</h5></div>
+>>>>>>> 900c65a6ff53030b975a68bc27d2fa361d566fc3
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
             <form id="uploadForm" action="process_blog_upload.php" method="post">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
@@ -86,12 +128,20 @@
                 </div>
                 <div class="mb-3">
                     <label for="content" class="form-label">Content</label>
+<<<<<<< HEAD
                     <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+=======
+                    <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
                 </div>
                 <div class="mb-3">
                     <label for="spotify_link" class="form-label">Spotify Link (Optional)</label>
                     <input type="text" class="form-control" id="spotify_link" name="spotify_link" placeholder="Enter Spotify Link">
                 </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
                 <button type="submit" class="btn btn-danger">Upload Blog</button>
             </form>
         </div>
@@ -155,4 +205,91 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
+<<<<<<< HEAD
+=======
+=======
+                <button type="submit" class="btn btn-success">Upload Blog</button>
+            </form>
+        </div>
+    </main>
+   <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <p>&copy; 2024 Golden Rock Adr. All rights reserved.</p>
+                    <p>Website developed by <a href="https://www.akilamtechnology.com/"
+                            class="text-white">Akilam Technology </a>With &nbsp;<i
+                            class="bi bi-heart-fill text-pink"></i></p>
+                </div>
+                <div
+                    class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-lg-end justify-content-center align-items-center">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"
+                                class="text-white text-decoration-none">Back to top <i
+                                    class="fas fa-arrow-up"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('uploadForm');
+            const alertsDiv = document.getElementById('alerts');
+
+            const storedAlerts = JSON.parse(localStorage.getItem('alerts'));
+            if (storedAlerts) {
+                showAlert(storedAlerts.type, storedAlerts.message);
+                localStorage.removeItem('alerts');
+            }
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+                fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            window.location.reload();
+                            showAlert('success', 'Blog uploaded successfully!');
+                        } else {
+                            showAlert('warning', data.message);
+                        }
+                    })
+                    .catch(error => {
+                        showAlert('danger', 'An error occurred while uploading the blog.');
+                        console.error('Error:', error);
+                    });
+            });
+
+            function showAlert(type, message) {
+                alertsDiv.innerHTML = '';
+
+                const alertDiv = document.createElement('div');
+                alertDiv.classList.add('alert', `alert-${type}`);
+                alertDiv.textContent = message;
+
+                alertsDiv.appendChild(alertDiv);
+
+                localStorage.setItem('alerts', JSON.stringify({
+                    type,
+                    message
+                }));
+
+                setTimeout(() => {
+                    alertDiv.remove();
+                }, 2000);
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+
+>>>>>>> 900c65a6ff53030b975a68bc27d2fa361d566fc3
+>>>>>>> 298b38066a84250bbfec73225c8b096a6580fb85
 </html>
